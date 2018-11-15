@@ -2,8 +2,9 @@ pipeline {
 	agent any
 	stages {
 		stage('Build') {
-			step {
+			steps {
 				sh 'mvn clean package'
+				sh 'docker build -t myapp:v1 .'
 			}
 		}
 	}
