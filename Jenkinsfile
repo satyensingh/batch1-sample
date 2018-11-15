@@ -4,7 +4,7 @@ pipeline {
 		stage('Build') {
 			steps {
 				sh 'mvn clean package'
-				sh 'docker build -t myapp:${env.BUILD_ID} .'
+				sh 'docker build . -t myapp:${env.BUILD_ID}'
 			}
 		}
 	}
